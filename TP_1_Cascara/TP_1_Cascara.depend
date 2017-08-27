@@ -6,3 +6,24 @@
 
 1457052376 d:\utn\tp1 programacion laboratorio 1\tp_1_cascara\funciones.h
 
+1503853956 source:d:\tps.2017\tp_1_cascara\calculos.c
+	"Calculos.h"
+
+1503853956 d:\tps.2017\tp_1_cascara\calculos.h
+
+1503854053 source:d:\tps.2017\tp_1_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+	"PideNumero.h"
+	"Calculos.h"
+
+1457052376 d:\tps.2017\tp_1_cascara\funciones.h
+
+1503853956 d:\tps.2017\tp_1_cascara\pidenumero.h
+
+1503853956 source:d:\tps.2017\tp_1_cascara\pidenumeo.c
+	<stdio.h>
+	<stdlib.h>
+	"PideNumero.h"
+
