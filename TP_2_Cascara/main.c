@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "funciones.h"
 
+#define  LONGITUD 20
 
 int main()
 {
@@ -23,18 +24,18 @@ int main()
         switch(opcion)
         {
             case 1:
-                func_cargarPersona(persona,func_obtenerEspacioLibre(persona,20));
+                func_cargarPersona(persona,func_obtenerEspacioLibre(persona,LONGITUD));
                 break;
             case 2:
                 printf("\nIngrese DNI de la persona a eliminar:\n ");
                 scanf("%d", &index);
-                func_eliminarPersona(persona, 20, func_buscarPorDni(persona,index,20));
+                func_eliminarPersona(persona, 20, func_buscarPorDni(persona,index,LONGITUD));
                 break;
             case 3:
                 func_printPersona(persona,20);
                 break;
             case 4:
-                func_imprimeGrafico (persona,20,func_obtenerEspacioLibre(persona));
+                func_imprimeGrafico(persona,func_obtenerIndiceEdad(persona,LONGITUD),LONGITUD);
                 break;
             case 5:
                 seguir = 'n';

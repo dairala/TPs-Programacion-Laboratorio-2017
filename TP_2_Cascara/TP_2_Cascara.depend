@@ -1,16 +1,16 @@
 # depslib dependency file v1.0
-1505847776 source:d:\tps.2017\tp_2_cascara\funciones.c
+1506026860 source:d:\tps.2017\tp_2_cascara\funciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"funciones.h"
 	"validar.h"
 
-1505833421 d:\tps.2017\tp_2_cascara\funciones.h
+1506023872 d:\tps.2017\tp_2_cascara\funciones.h
 
 1505704189 d:\tps.2017\tp_2_cascara\validar.h
 
-1505832388 source:d:\tps.2017\tp_2_cascara\main.c
+1506017877 source:d:\tps.2017\tp_2_cascara\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"

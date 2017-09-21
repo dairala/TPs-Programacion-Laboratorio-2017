@@ -35,7 +35,7 @@ int func_cargarPersona (ePersona* persona, int index)
     {
         if(val_getFloat(buffer,"","",3,51)==0)
         {
-            if(val_getFloat(bEdad,"\n Ingrese Edad\n","\nError: Ingrese Edad valida\n",3,51)==0)
+             if(val_getFloat(bEdad,"\n Ingrese Edad\n","\nError: Ingrese Edad valida\n",3,51)==0)
              {
                 if(val_getFloat(bDni,"\n Ingrese DNI\n","\nError: Ingrese DNI valido\n",3,51)==0)
                 {
@@ -117,160 +117,105 @@ int func_buscarPorDni(ePersona* persona, int dni, int longitud)
     return retorno;
 }
 
-//void func_imprimeGrafico(ePersona* persona, int longitud)
-//{
-//   //int persona[].edad;
-//   int i;
-//   //int j;
-//   //int max;
-//
-//   //max = 0;
-//
-//        for (i=0; i<longitud ; i++)
-//        {
-//            if(persona[i].edad < 19 )
-//                {
-//                    printf("*");
-//                }
-//                else
-//                {
-//                    printf("  ");
-//                }
-//
-//        }
-//
-//        for (i=0; i<longitud ; i++)
-//        {
-//            if(persona[i].edad > 18 && persona[i].edad < 36)
-//                {
-//                    printf("*");
-//                }
-//                else
-//                {
-//                    printf("  ");
-//                }
-//       putchar('\n');
-//        }
-//
-//                for (i=0; i<longitud ; i++)
-//        {
-//            if(persona[i].edad > 35)
-//                {
-//                    printf("*");
-//                }
-//                else
-//                {
-//                    printf("  ");
-//                }
-//       putchar('\n');
-//        }
-//        for (i = max; i > 0; i--)
-//        {
-//           for (j = 0; j < 5; j++)
-//           {
-//                if(persona[i].edad < 19 )
-//                {
-//                    printf("*");
-//                }
-//                else
-//                {
-//                    printf("  ");
-//                }
-//
-//           }
-//        }
-//      putchar('\n');
-//        }
-
-//        for (i = 0; i < 5; i++)
-//        {
-//           if(persona[i].edad > 18 && persona[i].edad <36)
-//           {
-//
-//           if (persona[i].edad > max)
-//           {
-//               max = persona[i].edad;
-//           }
-//        }
-//        for (i = max; i > 0; i--)
-//        {
-//           for (j = 0; j < 5; j++)
-//           {
-//                if (persona[j].edad >= i)
-//                {
-//                    printf(" *");
-//                }
-//                else
-//                {
-//                    printf("  ");
-//                }
-//
-//           }
-//        }
-//      putchar('\n');
-//        }
-//
-//        for (i = 0; i < 5; i++)
-//        {
-//            if(persona[i].edad >36)
-//            {
-//           if (persona[i].edad > max)
-//           {
-//               max = persona[i].edad;
-//           }
-//        }
-//        for (i = max; i > 0; i--)
-//        {
-//           for (j = 0; j < 5; j++)
-//           {
-//                if (persona[j].edad >= i)
-//                {
-//                    printf(" *");
-//                }
-//                else
-//                {
-//                    printf("  ");
-//                }
-//
-//           }
-//        }
-//      putchar('\n');
-//        }
-
-void func_imprimeGrafico(ePersona* persona, int longitud, int index)
+int func_imprimeGrafico(ePersona* persona,int index, int longitud)
 {
+    int i;
+    int menor18=0;
+    int de19a35=0;
+    int mayor35=0;
+    int flag=0;
+    int mayor;
 
-   //int persona[].edad = {1, 3, 9, 7, 5};
-   int i;
-   int j;
-   int max;
-
-   max = 0;
-   for (i = index; i < longitud; i++)
-   {
-      if (persona[i].edad > max)
-      {
-          max = persona[i].edad;
-      }
-   }
-   for (i = max; i > 0; i--)
+    for(i=0; i<longitud ; i++)
     {
-      for (j = index; j < longitud; j++)
-         {
-             if(persona[j].edad <19)
-             {
-             if (persona[j].edad < i)
-             {
-                 printf(" *");
-             }
-             else
-               {
-                   printf("  ");
-               }
-             }
-         }
-
-      putchar('\n');
+    if(persona[index].edad<=18)
+    {
+        menor18 ++;
     }
+    else
+    {
+        if(persona[index].edad>18 && persona[index].edad<36)
+        {
+            de19a35 ++;
+        }
+        else
+        {
+            mayor35 ++;
+        }
+    }
+    }
+    if(menor18 >= de19a35 && menor18 >= mayor35)
+    {
+        mayor = menor18;
+    }
+    else
+    {
+        if(de19a35 >= menor18 && de19a35 >= mayor35)
 
+            mayor = de19a35;
+
+        else
+
+            mayor = mayor35;
+
+    }
+    for(i=mayor;i>0;i--)
+    {
+        if(i<10)
+        {
+            printf("%02d|",i);
+        }
+        else
+        {
+            printf("%02d|",i);
+        }
+        if(i<menor18)
+        {
+            printf("*");
+        }
+        if(i<=de19a35)
+        {
+            flag=1;
+            printf("\t*");
+        }
+        if(i<=mayor35)
+        {
+            if(flag==0)
+
+                printf("\t\t*");
+
+
+
+                if(flag==1)
+
+                    printf("\t*");
+
+
+        }
+        printf("\n");
+    }
+    printf("--------------------");
+    printf("\n  |<18\t19-35\t>35");
+    printf("\n    %d\t%d\t%d\n",menor18, de19a35, mayor35);
+
+   return 0;
+}
+
+int func_obtenerIndiceEdad(ePersona* persona, int longitud)
+{
+    int retorno = -1;
+    int i;
+    if(persona != NULL && longitud > 0)
+    {
+        for(i=0; i<longitud ; i++)
+        {
+            if(persona[i].estado == LUGAR_OCUPADO)
+            {
+                retorno =  i;
+                break;
+            }
+        }
+
+    }
+    return retorno;
 }

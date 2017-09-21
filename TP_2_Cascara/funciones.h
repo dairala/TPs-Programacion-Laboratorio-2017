@@ -1,7 +1,7 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
-typedef struct {
-
+typedef struct
+{
     char nombre[50];
     int edad;
     unsigned char estado;
@@ -30,5 +30,6 @@ int func_cargarPersona (ePersona* persona, int index);
 int func_initPersona (ePersona* persona, int longitud);
 int func_printPersona (ePersona* persona, int longitud);
 void func_eliminarPersona(ePersona* persona, int longitud, int index);
-void func_imprimeGrafico(ePersona* persona, int longitud, int index);
+int func_imprimeGrafico(ePersona* persona,int index, int longitud);
+int func_obtenerIndiceEdad(ePersona* persona, int longitud);
 //FUNCIONES_H_INCLUDED
