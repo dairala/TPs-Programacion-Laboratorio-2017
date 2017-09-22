@@ -79,7 +79,7 @@ int func_printPersona (ePersona* persona, int longitud)
         {
             if(persona[i].estado == LUGAR_OCUPADO)
             {
-                printf("\nID: %d - Nombre: %s - Edad: %d - DNI: %d\n",i,persona[i].nombre,persona[i].edad,persona[i].dni);
+                printf("\n Nombre: %s - Edad: %d - DNI: %d - ID: %d\n",persona[i].nombre,persona[i].edad,persona[i].dni,i);
             }
         }
 
@@ -102,7 +102,7 @@ int func_buscarPorDni(ePersona* persona, int dni, int longitud)
 {
     int retorno = -1;
     int i;
-    if(persona != NULL && longitud > 0)
+    if(persona != NULL && longitud > 0 && dni >= 0)
     {
         for(i=0; i<longitud ; i++)
         {
@@ -124,7 +124,7 @@ int func_imprimeGrafico(ePersona* persona,int index, int longitud)
     int de19a35=0;
     int mayor35=0;
     int flag=0;
-    int mayor;
+    int max;
 
     for(i=0; i<longitud ; i++)
     {
@@ -146,20 +146,20 @@ int func_imprimeGrafico(ePersona* persona,int index, int longitud)
     }
     if(menor18 >= de19a35 && menor18 >= mayor35)
     {
-        mayor = menor18;
+        max = menor18;
     }
     else
     {
         if(de19a35 >= menor18 && de19a35 >= mayor35)
 
-            mayor = de19a35;
+            max = de19a35;
 
         else
 
-            mayor = mayor35;
+            max = mayor35;
 
     }
-    for(i=mayor;i>0;i--)
+    for(i=max;i>0;i--)
     {
         if(i<10)
         {
@@ -181,15 +181,13 @@ int func_imprimeGrafico(ePersona* persona,int index, int longitud)
         if(i<=mayor35)
         {
             if(flag==0)
-
+              {
                 printf("\t\t*");
-
-
-
-                if(flag==1)
-
-                    printf("\t*");
-
+              }
+            if(flag==1)
+              {
+                printf("\t*");
+              }
 
         }
         printf("\n");

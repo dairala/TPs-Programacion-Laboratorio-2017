@@ -29,10 +29,10 @@ int main()
             case 2:
                 printf("\nIngrese DNI de la persona a eliminar:\n ");
                 scanf("%d", &index);
-                func_eliminarPersona(persona, 20, func_buscarPorDni(persona,index,LONGITUD));
+                func_eliminarPersona(persona, LONGITUD, func_buscarPorDni(persona,index,LONGITUD));
                 break;
             case 3:
-                func_printPersona(persona,20);
+                func_printPersona(persona,LONGITUD);
                 break;
             case 4:
                 func_imprimeGrafico(persona,func_obtenerIndiceEdad(persona,LONGITUD),LONGITUD);
