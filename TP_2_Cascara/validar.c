@@ -12,7 +12,7 @@ void myFgets(char* buffer, int limite ,FILE* archivo)
     buffer[limite-1] = '\0';
     while(buffer[i] != '\0')
     {
-        if(buffer[i] == 10)//10 -> LF
+        if(buffer[i] == 10)
         {
             buffer[i] = '\0';
             break;

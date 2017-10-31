@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1509314338 source:d:\tps.2017\tp_3_cascara\cargar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"cargar.h"
+	"validar.h"
+	"movie.h"
+
+1509314338 d:\tps.2017\tp_3_cascara\cargar.h
+
+1509314584 d:\tps.2017\tp_3_cascara\validar.h
+
+1509333009 d:\tps.2017\tp_3_cascara\movie.h
+
+1509327563 source:d:\tps.2017\tp_3_cascara\main.c
+	<stdio.h>
+	<stdlib.h>
+	"movie.h"
+
+1509333313 source:d:\tps.2017\tp_3_cascara\movie.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"movie.h"
+	"validar.h"
+
+1509314585 source:d:\tps.2017\tp_3_cascara\validar.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"validar.h"
+
